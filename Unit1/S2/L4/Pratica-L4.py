@@ -1,4 +1,5 @@
 def perimetro():  ## inizio funzione perimetro
+
     print("**********************************************************************************")
     print("BENVENUTO NEL CALCOLATORE DEl PERIMETRO DI UNA FIGURA GEOMETRICA A TUA SCELTA!!!")      ## stampa a schermo il benvenuto
     print("**********************************************************************************")
@@ -8,7 +9,8 @@ def perimetro():  ## inizio funzione perimetro
          - Triangolo --> 3
          - Equilatero--> 4
          - Isoscele  --> 5
-         - Cerchio   --> 6       
+         - Cerchio   --> 6
+         - Uscita    --> 7      
           """)                 ## stampa a schermo le scelte che l'utente dovrà digitare
     
     print("Inserire la scelta: ")
@@ -36,20 +38,25 @@ def perimetro():  ## inizio funzione perimetro
         print("hai scelto il calcolo del perimetro di un Triangolo Isoscele(due lati uguali)!")
         base = input("Inserire il valore della base: ")  ## variabile che consente di inserire tramite (input) all'utente il valore del lato
         lato = input("inserire il valore di lato: ")  ## variabile che consente di inserire tramite (input) all'utente il valore del lato
-        print(f"Il perimetro del triangolo isoscele avente due lati dello stesso valore {lato} e base {base} è: {int(base)+2*int(lato)}!!")  ## stampa a schermo il risultato del perimetro, f permette di fare il calcolo all'interno della stringa
+        print(f"Il perimetro del triangolo isoscele avente due lati dello stesso valore {lato} e base {base} è: {int(base)+2*int(lato)}!!")## stampa a schermo il risultato del perimetro, f permette di fare il calcolo all'interno della stringa
+        
+         
     elif scelta == 6:  ## if permette di eseguire un blocco di codice solo se una certa condizione è vera, in questo caso 1
         print("Hai scelto il calcolo del perimetro di un Cerchio!")
         raggio = input("Inserire il valore del raggio: ")  ## variabile che consente di inserire tramite (input) all'utente il valore del lato
         π = 3.14  ## variabile pi greco è assegnata al valore 3.14
         print(f"Il perimetro del cerchio avente il raggio {raggio} e pi greco {π} è: {π*int(raggio)*2}!!")  ## stampa a schermo il risultato del perimetro, f permette di fare il calcolo all'interno della stringa
-        
+
+    elif scelta == 7:
+        global uscita
+        uscita = True   
                                                                                                               
     else:
         print("Inserisci una scelta tra le opzioni!!!")    ##
     
-        
-
-perimetro()
+uscita = False     
+while not uscita:
+    perimetro()
 
 
 
