@@ -55,9 +55,9 @@ def perimetro():  ## inizio funzione perimetro
         print("Inserisci una scelta tra le opzioni!!!")    ##
     
 uscita = False     
-while not uscita:
-    perimetro()
-
+while not uscita:  ## while not esegue un blocco di codice finchè è falso (uscita = false), se nelle scelte l'utente invia l'imput (7) 
+    perimetro()    ## si "attiva" elif scelta == 7 che fa diventare l'uscita global (permette di definire una variabile al di fuori della funzione) 
+                   ## e infine la variabile uscita = True farà concludere la funzione perchè while not non riuscirà a rieseguire la funzione
 
 
 
