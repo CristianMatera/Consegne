@@ -10,6 +10,10 @@ def scan_ports(target_ip, port_range):
         result = sock.connect_ex((target_ip, port))
         if result == 0:
             print(f"[+] Porta {port} è APERTA")
+        else:
+            
+            print(f"[CHIUSO] Porta {port}")
+
         sock.close()
 
 # Esempio di utilizzo
