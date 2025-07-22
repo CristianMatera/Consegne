@@ -5,7 +5,7 @@ s = so.socket(so.AF_INET, so.SOCK_STREAM)
 s.bind((SRV_ADDR, SRV_PORT))
 s.listen(1)
 print(f"Server in ascolto su {SRV_ADDR}:{SRV_PORT}")
-s.accept
+s.accept()
 connection,address = s.accept()
 print(f"Qualcuno si è connessa da {address[0]} usando la porta {address[1]}")
 while True:
