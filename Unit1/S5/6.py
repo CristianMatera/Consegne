@@ -13,7 +13,7 @@ print()
 print("1. Test GET (leggere dati):")
 try:
     # Facciamo una richiesta GET
-    risposta = requests.get(url + "/get", timeout=10)
+    risposta = requests.get(url + "/", timeout=10)
     # Stampiamo il risultato
     print("   Codice:", risposta.status_code)
     if risposta.status_code == 200:
@@ -31,10 +31,11 @@ try:
     # Dati da inviare
     dati = {"nome": "test", "messaggio": "ciao"}
     # Facciamo una richiesta POST
-    risposta = requests.post(url + "/post", data=dati, timeout=10)
+    risposta = requests.post(url + "/", data=dati, timeout=10)
     print("   Codice:", risposta.status_code)
+    
     if risposta.status_code == 200:
-        print("   ✓ POST funziona!")
+        print("✓ POST funziona!")
     else:
         print("   ✗ POST ha problemi")
 except Exception as e:
@@ -47,7 +48,7 @@ print("3. Test PUT (aggiornare dati):")
 try:
     # Dati da aggiornare
     dati = {"id": 1, "nome": "test_nuovo"}
-    risposta = requests.put(url + "/put", data=dati, timeout=10)
+    risposta = requests.put(url + "/", data=dati, timeout=10)
     print("   Codice:", risposta.status_code)
     if risposta.status_code == 200:
         print("   ✓ PUT funziona!")
@@ -61,7 +62,7 @@ print()
 # TEST 4: DELETE (cancellare dati)
 print("4. Test DELETE (cancellare dati):")
 try:
-    risposta = requests.delete(url + "/delete", timeout=10)
+    risposta = requests.delete(url + "/", timeout=10)
     print("   Codice:", risposta.status_code)
     if risposta.status_code == 200:
         print("   ✓ DELETE funziona!")
@@ -75,7 +76,7 @@ print()
 # TEST 5: HEAD (solo header, senza contenuto)
 print("5. Test HEAD (solo informazioni, senza contenuto):")
 try:
-    risposta = requests.head(url + "/get", timeout=10)
+    risposta = requests.head(url + "/", timeout=10)
     print("   Codice:", risposta.status_code)
     if risposta.status_code == 200:
         print("   ✓ HEAD funziona!")
