@@ -12,7 +12,7 @@ print(f"[*] Sto testando i metodi HTTP su: {url}\n")
 for metodo in metodi:
     try:
         # Invia la richiesta e ottieni la risposta
-        risposta = requests.head(url, timeout=3)
+        risposta = requests.request(metodo, url, timeout=3)
 
         """Stampa il risultato in maniera chieda lasciando 8 spazi dal metodo specificato, gli status errori possibili sono:
             200 OK: È la risposta standard per le richieste andate a buon fine.
