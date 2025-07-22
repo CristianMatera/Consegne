@@ -1,24 +1,24 @@
 import httpx
 
-url = "http://192.168.60.101/phpMyAdmin/themes/original/img/logo_right.png"
+url = "http://192.168.60.101/phpMyAdmin/"
 
 try:
     # Fai la richiesta OPTIONS
-    response = httpx.options(url)
-    allowed = response.headers.get("allow", "")
+    response = httpx.options(f"{url}/get")
+    allowed = response.headers.get("Allow" )
     allowed_methods = [m.strip().upper() for m in allowed.split(",")]
 
     print(f"Metodo OPTIONS: {response.status_code}")
-    print(f"Metodi supportati dichiarati: {allowed_methods}\n")
+    print(f"Metodi supportati dichiarati: {allowed}\n")
 
     # Lista dei metodi HTTP comuni
-    metodi_da_testare = ["GET", "POST", "PUT", "DELETE",  "HEAD",  "OPTIONS"]
+    #metodi_da_testare = ["GET", "POST", "PUT", "DELETE",  "HEAD",  "OPTIONS"]
 
     # Testa ogni metodo
-    for metodo in metodi_da_testare:
+    for metodo in allowed_methods:
         try:
             r = httpx.request(metodo, url)
-            supportato = metodo in allowed_methods
+            supportato = metodo in allowed
             stato = r.status_code
 
             print(f"{metodo:<7} → Status: {stato} → {'✅ Supportato' if supportato else '❌ NON dichiarato come supportato'}")
