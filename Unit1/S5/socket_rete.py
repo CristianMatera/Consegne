@@ -6,7 +6,7 @@ from rich.table import Table           # Per creare tabelle esteticamente gradev
 console = Console()                    # Istanza della console Rich per output
 
 # Chiede all'utente l'IP da filtrare
-target_ip = input("Inserisci l'IP da monitorare (es. 192.168.1.100): ").strip()
+target_ip = input("Inserisci l'IP da monitorare: ").strip()
 # Chiede all'utente la porta da filtrare (opzionale)
 target_port = input("Inserisci la porta da monitorare (es. 80 o lascia vuoto per tutte): ").strip()
 
