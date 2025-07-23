@@ -2,6 +2,7 @@ import socket
 import csv
 from datetime import datetime
 
+
 # Mappa delle porte comuni con i servizi presunti
 PORT_SERVICES = {
     21: "FTP",
@@ -84,3 +85,4 @@ if __name__ == "__main__":
 
     risultati = scan_ports(target_ip, range(start, end + 1))
     salva_csv(risultati)
+
