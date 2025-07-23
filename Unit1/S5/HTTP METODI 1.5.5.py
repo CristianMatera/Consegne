@@ -1,4 +1,4 @@
-import httpx                          # Libreria per effettuare richieste HTTP asincrone/sincrone
+import httpx                          # Libreria per effettuare richieste HTTP 
 from bs4 import BeautifulSoup        # Libreria per il parsing HTML
 from rich.console import Console     # Console avanzata per output colorato/testuale con Rich
 from rich.table import Table         # Per creare tabelle formattate in Rich
