@@ -10,7 +10,7 @@ def get_valid_ip():
             ip = ipaddress.ip_address(ip_input)  # Tenta di creare un oggetto IP. Se fallisce, genera un errore
             return str(ip)  # Se valido, restituisce l'indirizzo IP come stringa
         except ValueError:  # Se l'indirizzo non è valido
-            print("❌ Indirizzo IP non valido. Riprova.")  # Messaggio di errore
+            print(" Indirizzo IP non valido. Riprova.")  # Messaggio di errore
 
 # Definizione di una funzione per ottenere una porta UDP valida
 def get_valid_port():
@@ -20,9 +20,9 @@ def get_valid_port():
             if 0 <= port <= 65535:  # Controlla che sia nel range valido delle porte (0-65535)
                 return port  # Se valida, la restituisce
             else:
-                print("❌ La porta deve essere compresa tra 0 e 65535.")  # Messaggio d’errore
+                print(" La porta deve essere compresa tra 0 e 65535.")  # Messaggio d’errore
         except ValueError:  # Se l’utente inserisce un valore non numerico
-            print("❌ Inserisci un numero valido.")  # Messaggio di errore
+            print("Inserisci un numero valido.")  # Messaggio di errore
 
 # Definizione di una funzione per ottenere il numero di pacchetti da inviare
 def get_packet_count():
@@ -32,9 +32,9 @@ def get_packet_count():
             if count > 0:  # Deve essere maggiore di zero
                 return count  # Restituisce il numero inserito
             else:
-                print("❌ Il numero deve essere maggiore di 0.")  # Messaggio d’errore
+                print("Il numero deve essere maggiore di 0.")  # Messaggio d’errore
         except ValueError:  # Se l’utente inserisce qualcosa di non numerico
-            print("❌ Inserisci un numero valido.")  # Messaggio di errore
+            print("  Inserisci un numero valido.")  # Messaggio di errore
 
 # Funzione principale che esegue il programma
 def main():
@@ -44,7 +44,7 @@ def main():
     packet_count = get_packet_count()  # Ottiene il numero di pacchetti da inviare
 
     # Stampa le informazioni riepilogative prima dell'invio
-    print(f"\n📤 Invio di {packet_count} pacchetti da 1 KB a {target_ip}:{target_port}...\n")
+    print(f"\n Invio di {packet_count} pacchetti da 1 KB a {target_ip}:{target_port}...\n")
 
     # Crea un socket UDP
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # Crea un socket IPv4 con protocollo UDP
